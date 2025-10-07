@@ -32,6 +32,10 @@ p {
   text-align: center;
 }
 
+section {
+  margin-bottom: 80px;
+}
+
 .navigation-links {
   display: flex;
   margin-top: 40px;
@@ -108,15 +112,18 @@ h3 {
 
 h1 {
   font-size: 80px !important;
+  font-size: clamp(2.2rem, 6vw, 5rem);
 }
 
 h2 {
   font-size: 48px;
+  font-size: clamp(1.5rem, 4vw, 3rem);
 }
 
 h3 {
   font-size: 24px;
   opacity: 0.7;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
 }
 
 p {
@@ -188,10 +195,6 @@ p {
   text-decoration: underline;
 }
 
-.img-fluid {
-  margin-bottom: 40px;
-  margin-left: ;
-}
 
 .btn.contact-link {
   background: var(--primary-color) !important;
@@ -205,6 +208,11 @@ p {
   border: none;
   cursor: pointer;
   display: inline-block;
+}
+
+.btn.contact-link:hover {
+  transform: scale(1.05);
+  background-color: #5b54e6;
 }
 
 .app-text {
@@ -241,8 +249,16 @@ p {
 }
 
 .img-fluid {
-  margin-bottom: 40px;
-  margin-left: ;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-fluid:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
 .btn.contact-link {
@@ -257,11 +273,13 @@ p {
   border: none;
   cursor: pointer;
   display: inline-block;
+  width: 100%;
+  max-width: 280px;
+  display: block;
 }
 
 .app-text {
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0 1.5rem;
 }
 
 .app-text h2,
@@ -291,3 +309,66 @@ p {
   width: 100%;
   border-radius: 4px;
 }
+
+.container {
+  padding: 2rem 1rem;
+}
+
+@media (max-width: 575.98px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .app-text {
+    text-align: center;
+    padding: 0;
+  }
+
+  .app-text h2,
+  .app-text h6 {
+    text-align: center;
+    padding: 0;
+  }
+
+  .img-fluid {
+    margin: 0 auto 20px;
+    display: block;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .app-text {
+    padding: 1rem 2rem;
+  }
+
+  .row {
+    align-items: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+
+
+
+
